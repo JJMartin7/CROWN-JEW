@@ -1,748 +1,302 @@
+@charset "UTF-8";
+/* Variables */
 /* Reset de márgenes y padding por defecto */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 /* Estilo general del cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* Estilo del header */
 header {
-    background-color: #ccc;
-    position: relative;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  background-color: #ccc;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
-
 header .container {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 header .logo {
-    margin-right: auto;
+  margin-right: auto;
 }
-
 header .logo img {
-    height: 40px;
-    transition: transform 0.3s ease;
+  height: 40px;
+  transition: transform 0.3s ease;
 }
-
 header .logo img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 header nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
-
 header nav a {
-    margin: 0 30px;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    transition: color 0.3s ease;
+  margin: 0 30px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
-
 header nav a:hover {
-    color: #007bff;
+  color: #007bff;
 }
-
 header .social-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-
-header .social-media {
-    display: flex;
-    margin-right: 20px;
+header .social-container .social-media {
+  display: flex;
+  margin-right: 20px;
 }
-
-header .social-media a {
-    margin: 0 10px;
-    display: block;
+header .social-container .social-media a {
+  margin: 0 10px;
+  display: block;
 }
-
-header .social-media img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+header .social-container .social-media a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
-
-header .social-media img:hover {
-    transform: scale(1.1);
+header .social-container .social-media a img:hover {
+  transform: scale(1.1);
 }
-
-header .cart {
-    margin-left: auto;
+header .social-container .cart {
+  margin-left: auto;
 }
-
-header .cart img {
-    height: 30px;
-    transition: transform 0.3s ease;
+header .social-container .cart img {
+  height: 30px;
+  transition: transform 0.3s ease;
 }
-
-header .cart img:hover {
-    transform: scale(1.1);
+header .social-container .cart img:hover {
+  transform: scale(1.1);
 }
 
 /* Estilo del swap de imágenes */
 .image-swap-wrapper {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Ajusta la altura para hacer el swap más grande */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 400px; /* Ajusta la altura para hacer el swap más grande */
+  overflow: hidden;
 }
-
-.image-swap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.image-swap-wrapper .image-swap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-
-.swap-container {
-    display: flex;
-    width: 500%; /* Número de imágenes en porcentaje */
-    height: 100%;
-    animation: swap 90s linear infinite; /* Duración extendida para un swap muy lento */
+.image-swap-wrapper .image-swap .swap-container {
+  display: flex;
+  width: 500%; /* Número de imágenes en porcentaje */
+  height: 100%;
+  animation: swap 90s linear infinite; /* Duración extendida para un swap muy lento */
 }
-
-.swap-container img {
-    width: 20%; /* Ancho igual a 100% / número de imágenes */
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el área */
+.image-swap-wrapper .image-swap .swap-container img {
+  width: 20%; /* Ancho igual a 100% / número de imágenes */
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra todo el área */
 }
-
 @keyframes swap {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-400%); } /* Ajusta el porcentaje para tu número de imágenes */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-400%);
+  } /* Ajusta el porcentaje para tu número de imágenes */
 }
-
-.background-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    color: white; /* Color del texto para contraste */
-    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
-    z-index: 1; /* Asegúrate de que el texto esté encima del swap */
-    padding: 20px; /* Espacio alrededor del texto */
-    box-sizing: border-box;
-    font-size: 2rem; /* Tamaño de fuente más grande */
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mayor legibilidad */
+.image-swap-wrapper .background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: white; /* Color del texto para contraste */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+  z-index: 1; /* Asegúrate de que el texto esté encima del swap */
+  padding: 20px; /* Espacio alrededor del texto */
+  box-sizing: border-box;
+  font-size: 2rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para mayor legibilidad */
 }
 
 /* Estilo del logo grande */
 .large-logo-wrapper {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f4f4f4;
-    border-top: 5px solid #007bff;
-    border-bottom: 5px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0; /* Añadido margen superior e inferior */
+  padding: 40px 20px;
+  text-align: center;
+  background: #f4f4f4;
+  border-top: 5px solid #007bff;
+  border-bottom: 5px solid #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px 0; /* Añadido margen superior e inferior */
 }
-
 .large-logo-wrapper img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.large-logo-wrapper img:hover {
+  transform: scale(1.05);
 }
 
-.large-logo-wrapper img:hover {
-    transform: scale(1.05);
+.image-logo-we {
+  text-align: center;
+  margin: 20px;
+  padding: 25px;
 }
-.image-logo-we{
-    text-align: center;
-    margin: 20px;
-    padding: 25px;
-}
+
 /* Estilo de la sección de texto y galería */
 .text-and-gallery {
-    padding: 40px;
-    border-radius: 15px;
-    font-size: 1rem;
+  padding: 40px;
+  border-radius: 15px;
+  font-size: 1rem;
 }
-
 .text-and-gallery h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 30px;
-    border-radius: 5px;
-    background-color: #d2d0d0;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  border-radius: 5px;
+  background-color: #d2d0d0;
 }
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 20px;
-    justify-items: center;
-    margin-top: 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
+.text-and-gallery .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
 }
-
-.gallery-item {
-    text-align: center;
-    display: block;
-    width: 100%;
-    max-width: 300px; /* Ajusta el tamaño máximo de las imágenes */
-    box-sizing: border-box;
-    text-decoration: none;
-    color: #333;
+.text-and-gallery .gallery .gallery-item {
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 300px; /* Ajusta el tamaño máximo de las imágenes */
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #333;
 }
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.text-and-gallery .gallery .gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
-
-.gallery-item p {
-    margin-top: 10px;
+.text-and-gallery .gallery .gallery-item p {
+  margin-top: 10px;
 }
 
 /* Estilo del formulario de contacto */
 .contact-form {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd; /* Añade un borde al formulario */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Añade un borde al formulario */
 }
-
 .contact-form h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.contact-form .form-instruction {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #555;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form form .form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.contact-form form .form-group input,
+.contact-form form .form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.contact-form form .form-group input:focus,
+.contact-form form .form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.contact-form form .form-group textarea {
+  resize: vertical;
+}
+.contact-form form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form form button:hover {
+  background-color: #0056b3;
 }
 
-.form-instruction {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    color: #555;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Imagen grande entre la galería y el formulario */
-.large-logo-wrapper {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f4f4f4;
-    border-top: 5px solid #007bff;
-    border-bottom: 5px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px 0; /* Añadido margen superior e inferior */
-}
-
-.large-logo-wrapper img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.large-logo-wrapper img:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav a {
-        margin: 10px 0;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
-    }
-
-    .gallery-item {
-        max-width: 250px; /* Ajusta el tamaño máximo para pantallas más pequeñas */
-    }
-
-    .image-swap-wrapper {
-        height: 300px;
-    }
-
-    /* Estilo del footer */
+/* Estilo del footer */
 footer {
-    background-color: #2c3e50; /* Color de fondo oscuro */
-    color: #ecf0f1; 
-    padding: 20px 0; /* Espacio arriba y abajo */
-    text-align: center; 
-    border-top: 4px solid #3498db; /* Borde superior azul */
+  background-color: #2c3e50; /* Color de fondo oscuro */
+  color: #ecf0f1;
+  padding: 20px 0; /* Espacio arriba y abajo */
+  text-align: center;
+  border-top: 4px solid #3498db; /* Borde superior azul */
 }
-
-.footer-content {
-    max-width: 1200px; 
-    margin: 0 auto; 
-    padding: 0 20px; /* Espacio horizontal alrededor del contenido */
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Espacio horizontal alrededor del contenido */
 }
-
-.footer-content p {
-    margin: 10px 0; 
-    font-size: 1rem; 
+footer .footer-content p {
+  margin: 10px 0;
+  font-size: 1rem;
 }
-
-.footer-content a {
-    color: #3498db; 
-    text-decoration: none; 
-    font-weight: bold; 
+footer .footer-content a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-.footer-content a:hover {
-    text-decoration: underline; /* Subrayado al pasar el cursor */
+footer .footer-content a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
 }
-
 @media (max-width: 768px) {
-    .footer-content p {
-        font-size: 0.9rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
-    }
-}
-.slider {
-            position: relative;
-            width: 100%;
-            max-width: 800px; /* Ajusta según el tamaño deseado */
-            margin: 0 auto; /* Centra el slider horizontalmente */
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out; /* Suaviza la transición entre imágenes */
-        }
-
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .slide img {
-            width: 100%;
-            display: block;
-        }
-
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .control-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 2rem;
-        }
-
-        .control-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Botones de radio ocultos */
-        input[type="radio"] {
-            display: none;
-        }
-
-        /* Controles de radio para seleccionar cada imagen */
-        #slide1:checked ~ .slides {
-            transform: translateX(0%);
-        }
-
-        #slide2:checked ~ .slides {
-            transform: translateX(-100%);
-        }
-
-        #slide3:checked ~ .slides {
-            transform: translateX(-200%);
-        }
-
-        #slide4:checked ~ .slides {
-            transform: translateX(-300%);
-        }
-
-        #slide5:checked ~ .slides {
-            transform: translateX(-400%);
-        }}
-        /* Estilos del Slider */
-        .image-swap-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-            margin: 0 auto; /* Centra el slider horizontalmente */
-        }
-
-        .image-swap {
-            position: relative;
-            width: 100%;
-        }
-
-        .swap-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out; /* Suaviza la transición entre imágenes */
-            width: 100%;
-        }
-
-        .swap-container img {
-            width: 100%;
-            height: auto;
-        }
-
-        .background-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-        }
-
-        .slider-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .control-button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 2rem;
-        }
-
-        .control-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        /* Pagina de Productos | CROWN ------------------- */
-
-/* Reset de márgenes y padding por defecto */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  footer .footer-content p {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
 }
 
-/* Estilo general del cuerpo */
-.body-tienda {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #eeeded;
-}
-
-/* Estilo del header */
-#header-tienda {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.container-tienda {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-#nav-tienda .nav-link-tienda {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-#nav-tienda .nav-link-tienda:hover {
-    text-decoration: underline;
-}
-
-/* Estilo del logo */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    background-color: #ffffff;
-}
-
-.logo-tienda {
-    height: 80px;
-}
-
-/* Estilo del main */
-#main-tienda {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.titulo-tienda {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-}
-
-.tarjeta-producto {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.imagen-producto {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.nombre-producto {
-    font-size: 18px;
-    margin: 15px 0;
-}
-
-.descripcion-producto {
-    font-size: 14px;
-    color: #555;
-}
-
-.precio-producto {
-    font-size: 20px;
-    color: #181715;
-    margin: 10px 0;
-}
-
-.btn-carrito {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #a0a3a5;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-carrito:hover {
-    background-color: #000001;
-}
-
-/* Estilo del footer */
-
-/* Estilo del footer */
-#footer-crown {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.footer-logo {
-    margin-bottom: 10px;
-}
-
-.footer-logo-img {
-    max-width: 150px; /* Ajusta según el tamaño del logo */
-    height: auto;
-}
-
-.footer-contact {
-    margin-bottom: 10px;
-}
-
-.footer-email {
-    font-size: 16px;
-}
-
-.footer-email-link {
-    color: #3498db;
-    text-decoration: none;
-}
-
-.footer-email-link:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    border-top: 1px solid #34495e;
-    padding-top: 10px;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-}
-
-
-
-
-/* Responsive */
-@media (max-width: 1200px) {
-    .contenedor-productos {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .contenedor-productos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .contenedor-productos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .container-tienda {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-tienda .nav-link-tienda {
-        margin: 10px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .contenedor-productos {
-        grid-template-columns: 1fr;
-    }
-}
-/* Estilo general para la galería */
-.text-and-gallery {
-    text-align: center;
-    margin: 20px;
-}
-
-.text-and-gallery .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Espacio entre las imágenes */
-    justify-content: center;
-}
-
-.text-and-gallery .gallery-item {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-
-.text-and-gallery .gallery-item img {
-    width: 100%;
-    height: 250px; /* Altura fija para todas las imágenes */
-    object-fit: cover;
-    border-radius: 10px; /* Bordes redondeados opcionales */
-}
-
-.text-and-gallery .gallery-item p {
-    margin-top: 10px;
-    font-size: 16px;
-}
+/*# sourceMappingURL=styles.css.map */
