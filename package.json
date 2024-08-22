@@ -15,3 +15,9 @@
     "sass": "^1.77.8"
   }
 }
+{
+  "scripts": {
+    "build-css": "node-sass src/scss/ -o dist/css/",
+    "build": "npm run build-css"
+  }
+}
