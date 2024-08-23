@@ -735,3 +735,101 @@ footer {
 
 
 /*# sourceMappingURL=styles.css.map */
+
+/* Estilos para la sección de reseñas */
+/* Estilos para la sección de reseñas */
+.reviews-section {
+    position: relative; /* Necesario para el posicionamiento del fondo y el contenido */
+    padding: 40px 20px; /* Ajusta el padding según sea necesario */
+    background: url('images/chicapatioaccs.tiff') no-repeat center center; /* Cambia la URL a tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda el área del fondo */
+    background-attachment: fixed; /* Mantiene la imagen de fondo fija al hacer scroll */
+    color: #fff; /* Cambia el color del texto si es necesario para asegurar buen contraste */
+    text-align: center; /* Centra el texto */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    min-height: 400px; /* Ajusta la altura mínima según sea necesario */
+    display: flex; /* Utiliza flexbox para alinear el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Contenedor de las reseñas */
+.reviews-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Asegura que el contenido esté por encima del fondo */
+}
+
+/* Estilos para las cajas de reseñas */
+.review {
+    width: 45%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para mejorar la legibilidad */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro de la caja */
+    text-align: center; /* Centra el texto dentro de la caja */
+}
+
+/* Contenedor de estrellas */
+.stars {
+    margin-bottom: 20px; /* Espacio debajo de las estrellas */
+    margin-top: -40px; /* Ajusta el valor negativo para mover las estrellas más arriba */
+}
+
+/* Icono de estrella */
+.star {
+    font-size: 24px; /* Ajusta el tamaño de las estrellas según sea necesario */
+    color: white; /* Color blanco para las estrellas */
+}
+
+/* Espacio debajo del texto */
+.review p {
+    margin-bottom: 10px;
+}
+
+/* Contenedor de la información del autor */
+.review-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Espacio encima de las imágenes del autor */
+}
+
+/* Imagen del autor */
+.author-img {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%; /* Redondea la imagen para que parezca un círculo */
+    margin-bottom: 5px; /* Espacio debajo de la imagen */
+    border: 2px solid #fff; /* Borde blanco para mayor visibilidad */
+}
+
+/* Texto debajo de las imágenes de los autores */
+.review-author p {
+    margin: 5px 0 0; /* Espacio encima y debajo del texto */
+    font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+}
+
+/* Animación de fondo al hacer scroll */
+@keyframes scrollBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%; /* Cambia 100% a un valor que se ajuste a tu imagen */
+    }
+}
+
+/* Aplicar animación de fondo */
+.reviews-section {
+    animation: scrollBackground 30s linear infinite;
+}
