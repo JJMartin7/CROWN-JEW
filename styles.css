@@ -731,12 +731,6 @@ footer {
     }
 }
 
-/*# sourceMappingURL=styles.css.map */
-
-
-/*# sourceMappingURL=styles.css.map */
-
-/* Estilos para la sección de reseñas */
 /* Estilos para la sección de reseñas */
 .reviews-section {
     position: relative; /* Necesario para el posicionamiento del fondo y el contenido */
@@ -968,11 +962,11 @@ footer {
     background-color: #229954;
 }
 
-/* Gif Cards */
+/* Gif Cards OPCION 1 -------------------------------------- */
 
 .giftcards-section {
     padding: 20px;
-    background-color: #f4f4f4; /* Color de fondo para el section de las giftcards */
+    background-color: #f4f4f4;
 }
 
 .giftcards-heading {
@@ -990,7 +984,7 @@ footer {
 }
 
 .giftcard-item {
-    background-color: #fff; /* Color de fondo de cada giftcard */
+    background-color: #fff;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -1113,4 +1107,226 @@ footer {
 
 .form-submit-button:hover {
     background-color: #080808;
+} 
+
+/* Gift Cards OPCION 2 (GALERIA) --------------------- */
+
+/* Reseteo de márgenes y rellenos para evitar conflictos */
+/* html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+}
+
+/* Contenedor principal que asegura que el footer esté al final */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+main.content {
+    flex: 1; /* Ocupa todo el espacio disponible, empujando el footer hacia abajo */
+}
+
+.gallery-container {
+    flex: 1; /* Ocupa todo el espacio disponible dentro de main */
+    overflow: hidden; /* Evita el desbordamiento */
+}
+
+.card-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+}
+
+.card-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: 20%; /* Ajusta el ancho según el número de tarjetas */
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-item:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+.card-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-value {
+    font-size: 1em;
+    margin: 5px 0 0;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .card-item {
+        width: 25%;
+    }
+}
+
+@media (max-width: 900px) {
+    .card-item {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-gallery {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .card-item {
+        width: 100%;
+    }
+
+    .card-overlay {
+        bottom: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+    }
+
+    .card-price {
+        font-size: 1em;
+    }
+
+    .card-value {
+        font-size: 0.8em;
+    }
+}
+
+footer {
+    background: #f1f1f1; /* Cambia el color de fondo según tu diseño */
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Opcional, para agregar una línea arriba del footer */
+} */
+
+/* CARRITO */
+
+.cart-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-details {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.item-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.item-price {
+    font-size: 16px;
+    color: #888;
+    margin: 5px 0;
+}
+
+.item-quantity {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.remove-item {
+    background-color: #ff6961;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-item:hover {
+    background-color: #ff5a4f;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.checkout-button:hover {
+    background-color: #45a049;
 }
