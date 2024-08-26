@@ -1123,10 +1123,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
-}
+
 
 /* Contenedor principal que asegura que el footer esté al final */
-.page-container {
+/* .page-container {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -1134,7 +1134,7 @@ body {
 
 main.content {
     flex: 1; /* Ocupa todo el espacio disponible, empujando el footer hacia abajo */
-}
+
 
 .gallery-container {
     flex: 1; /* Ocupa todo el espacio disponible dentro de main */
