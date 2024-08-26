@@ -1,3 +1,8 @@
+.baskervville-sc-regular {
+    font-family: "Baskervville SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}  
 /* Reset de márgenes y padding por defecto */
 * {
     margin: 0;
@@ -191,6 +196,7 @@ header .cart img:hover {
     font-size: 30px;
     border-radius: 5px;
     background-color: #f0efef;
+    font-family: "Baskervville SC", serif;
 }
 
 /* Contenedor para las tarjetas */
@@ -236,6 +242,7 @@ header .cart img:hover {
 
 .gallery-item p {
     margin-top: 10px;
+    font-family: "Baskervville SC", serif;
 }
 
 /* Estilo del formulario de contacto */
@@ -588,6 +595,8 @@ footer {
 .titulo-tienda {
     text-align: center;
     margin-bottom: 20px;
+    font-family: "Baskervville SC", serif;
+    font-weight: 300;
 }
 
 .contenedor-productos {
