@@ -21,32 +21,49 @@
         <a href="../index.html"><img src="../images/logofinal.jpeg" alt="Logo" class="logo-tienda"></a>
     </div>
 
-    <div class="cart-container">
-        <h2 class="cart-title">Tu Carrito</h2>
-        <div class="cart-item">
-            <img src="images/accesorio1.jpg" alt="Accesorio 1" class="cart-image">
-            <div class="cart-details">
-                <p class="item-name">Anillo de Acero Quirúrgico</p>
-                <p class="item-price">$20.00</p>
-                <input type="number" class="item-quantity" value="1" min="1">
+    <div class="main-wrapper">
+        <main class="cart-container">
+            <h1>Carrito de Compras</h1>
+            <ul class="cart-items">
+                <!-- Producto 1 -->
+                <li class="cart-item">
+                    <img src="producto1.jpg" alt="Producto 1" class="item-image">
+                    <div class="item-details">
+                        <h2 class="item-title">Producto 1</h2>
+                        <p class="item-price">$20.00</p>
+                    </div>
+                    <button class="btn-delete">Eliminar</button>
+                </li>
+                <!-- Producto 2 -->
+                <li class="cart-item">
+                    <img src="producto2.jpg" alt="Producto 2" class="item-image">
+                    <div class="item-details">
+                        <h2 class="item-title">Producto 2</h2>
+                        <p class="item-price">$15.00</p>
+                    </div>
+                    <button class="btn-delete">Eliminar</button>
+                </li>
+                <!-- Agrega más productos aquí -->
+            </ul>
+            <div class="cart-total">
+                <span class="total-label">Total:</span>
+                <span class="total-value">$35.00</span>
             </div>
-            <button class="remove-item">Eliminar</button>
-        </div>
-        <div class="cart-item">
-            <img src="images/accesorio2.jpg" alt="Accesorio 2" class="cart-image">
-            <div class="cart-details">
-                <p class="item-name">Pulsera de Acero Quirúrgico</p>
-                <p class="item-price">$25.00</p>
-                <input type="number" class="item-quantity" value="1" min="1">
-            </div>
-            <button class="remove-item">Eliminar</button>
-        </div>
-        <div class="cart-total">
-            <p>Total: $45.00</p>
-        </div>
-        <button class="checkout-button">Proceder al Pago</button>
+        </main>
     </div>
 
-    
+    <footer id="footer-crown">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../images/logofinal.jpeg" alt="Crown Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-contact">
+                <p class="footer-email">Correo: <a href="mailto:support@crown.com" class="footer-email-link">support@crown.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Crown. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

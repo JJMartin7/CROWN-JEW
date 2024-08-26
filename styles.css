@@ -104,6 +104,9 @@ header .cart img {
 header .cart img:hover {
     transform: scale(1.1);
 }
+h3{
+    font-family: "Baskervville SC", serif;
+}
 
 /* Estilo del swap de imágenes */
 .image-swap-wrapper {
@@ -260,6 +263,7 @@ header .cart img:hover {
     text-align: center;
     margin-bottom: 10px;
     font-size: 2rem;
+    font-family: "Baskervville SC", serif;
 }
 
 .form-instruction {
@@ -848,6 +852,7 @@ footer {
     margin: 40px 0 40px; 
     font-size: 2rem;
     color: #444;
+    font-family: "Baskervville SC", serif;
 }
 
 .giftcards-container {
@@ -888,6 +893,7 @@ footer {
     font-size: 1rem;
     margin: 10px 0;
     color: #666;
+    font-family: "Baskervville SC", serif;
 }
 
 .giftcard-button-100,
@@ -1248,94 +1254,128 @@ footer {
 
 /* CARRITO */
 
-.cart-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* styles.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f4f4f4; /* Color de fondo general para toda la página */
 }
 
-.cart-title {
-    font-size: 24px;
-    margin-bottom: 20px;
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 10px;
     text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    background-color: #ffffff; /* Color de fondo para el área principal */
+}
+
+.cart-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    background: rgb(233, 232, 232);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .cart-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
-.cart-image {
+.cart-item:hover {
+    background-color: #f9f9f9;
+}
+
+.item-image {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
+    margin-right: 15px;
 }
 
-.cart-details {
+.item-details {
     flex: 1;
-    padding-left: 20px;
 }
 
-.item-name {
-    font-size: 18px;
-    font-weight: 500;
+.item-title {
     margin: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .item-price {
-    font-size: 16px;
-    color: #888;
-    margin: 5px 0;
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
 }
 
-.item-quantity {
-    width: 50px;
-    padding: 5px;
-    font-size: 16px;
-}
-
-.remove-item {
-    background-color: #ff6961;
-    border: none;
+.btn-delete {
+    background-color: #bbb9b8;
     color: white;
-    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.remove-item:hover {
-    background-color: #ff5a4f;
+.btn-delete:hover {
+    background-color: #515151;
+    transform: scale(1.1);
+}
+
+.btn-delete:active {
+    transform: scale(0.9);
 }
 
 .cart-total {
-    text-align: right;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 20px 0;
-}
-
-.checkout-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #afacac;
     font-size: 18px;
-    text-align: center;
+    font-weight: bold;
 }
 
-.checkout-button:hover {
-    background-color: #45a049;
+.total-label {
+    color: #333;
+}
+
+.total-value {
+    color: #000000;
+}
+
+footer {
+    background-color: #ffffff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
 }
